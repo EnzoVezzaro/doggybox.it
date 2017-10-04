@@ -1,0 +1,12 @@
+<div id="{{ .LinkTitle }}_dashboard" class="main_dashboard">
+	{{ with .Title }}<h2>{{ . }}</h2>{{ end }}
+	{{ with .Params.username }}<h3>Username: </h3><h4>{{ . }}</h4>{{ end }}
+	{{ with .Params.password }}<h3>Password: </h3><h4>{{ . }}</h4>{{ end }}
+	{{ with .Params.membersince }}<h3>Abbonato Da: </h3><h4>{{ . }}</h4>{{ end }}
+	{{ with .Params.plancustomer }}<h3>Abbonato a: </h3><h4>{{ . }}</h4>{{ end }}
+	{{ with .Params.customerid }}<h3>CustomerID: </h3><h4>{{ . }}</h4>{{ end }}
+	{{ with .Params.dogname }}<h3>Nome: </h3><h4>{{ . }}</h4>{{ end }}
+	{{ with .Params.doggender }}<h3>Sesso: </h3><h4>{{ . }}</h4>{{ end }}
+	{{ with .Params.dogsize }}<h3>Size: </h3><h4>{{ . }}</h4>{{ end }}
+	{{ with .Params.dogbio }}<h3>Bio: </h3><h4>{{ . }}</h4>{{ end }}
+</div>

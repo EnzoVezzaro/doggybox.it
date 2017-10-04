@@ -1,0 +1,159 @@
+/*form styles
+
+#msform
+  width: auto !important
+  height: 100vh
+  margin: 50px auto
+  margin-bottom: -10px
+  padding-top: 80px
+  text-align: center
+  position: relative
+  fieldset
+    background: white
+    border: 0 none
+    border-radius: 3px
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)
+    padding: 20px 30px
+    box-sizing: border-box
+    width: 80%
+    margin: 0 10%
+    /*stacking fieldsets above each other
+    position: relative
+    &:not(:first-of-type)
+      display: none
+    input, textarea
+      height: 50px
+      padding: 15px
+      border: 1px solid #ccc
+      border-radius: 3px
+      margin-bottom: 10px
+      width: 100%
+      box-sizing: border-box
+      color: #2C3E50
+      font-size: 13px
+  .action-button
+    width: 25%
+    margin-top: 50px
+  .previous
+    margin-right: 20px
+
+/*Hide all except first fieldset
+
+/*inputs
+
+/*buttons
+
+/*headings
+
+.fs-title
+  font-size: 15px
+  text-transform: uppercase
+  color: #2C3E50
+  margin-bottom: 10px
+
+.fs-subtitle
+  font-weight: normal
+  font-size: 13px
+  color: #666
+  margin-bottom: 20px
+
+/*progressbar
+
+#progressbar
+  margin-bottom: 30px
+  overflow: hidden
+  /*CSS counters to number the steps
+  counter-reset: step
+  display: flex
+  justify-content: center
+  align-items: center
+  li
+    list-style-type: none
+    color: white
+    text-transform: uppercase
+    font-size: 9px
+    position: relative
+    height: 30px
+    width: 50px
+    background-image: url("../../images/dog_bone.svg")
+    background-repeat: no-repeat
+    background-position: center
+    &:before
+      position: relative
+      top: 5px
+      content: counter(step)
+      counter-increment: step
+      width: 20px
+      line-height: 20px
+      display: block
+      font-size: 10px
+      color: #333
+      background: white
+      border-radius: 3px
+      margin: 0 auto 5px auto
+    &:after
+      content: ''
+      width: 100%
+      height: 2px
+      background: white
+      position: absolute
+      left: -50%
+      top: 9px
+      z-index: -1
+      /*put it behind the numbers
+    &:first-child:after
+      /*connector not needed before the first step
+      content: none
+    &.active
+      &:before, &:after
+        position: relative
+        top: 5px
+        background-image: url("../../images/dog_bone.svg")
+        background-repeat: no-repeat
+        background-position: center
+        background-size: 75px
+        color: white
+
+/*progressbar connectors
+
+/*marking active/completed steps green
+/*The number of the step and the connector before it = green
+.peso_options, .gender_options, .piano_options, .piano_time_options
+  display: flex
+  justify-content: space-around
+  align-items: center
+  width: 100%
+  height: 300px
+  flex-wrap: wrap
+  #small, #medium, #large, #male, #female, #plan_1, #plan_2, .stripe-button-el, #plan_1_time, #plan_2_time, #plan_3_time, #customButton
+    background-color: yellow
+    -webkit-appearance: none
+    border: none
+    width: 200px !important
+    height: 250px !important
+    background: url(../images/logo_paw_original.svg) center center no-repeat
+    background-size: 150px
+  #small
+    background: url(../images/dog_white_brown.svg) bottom center no-repeat
+  #medium
+    background: url(../images/dog_white_blonde.svg) bottom center no-repeat
+  #large
+    background: url(../images/dog_gray_long_hair.svg) bottom center no-repeat
+  #male
+    background: url(../images/dog_blonde_white_hipster.svg) bottom center no-repeat
+  #female
+    background: url(../images/dog_female_pug.svg) bottom center no-repeat
+  #plan_1
+    background: url(../images/doggyBox_Box.svg) bottom center no-repeat
+  #plan_2
+    background: url(../images/doggyBox_Box.svg) bottom center no-repeat
+  .labels
+    display: flex
+    justify-content: space-around
+    align-items: center
+    width: 100%
+
+.upload
+  display: flex
+  justify-content: center
+  margin: 20px 40px

@@ -1,0 +1,29 @@
+{{ partial "head" . }}
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	{{ partial "header" . }}
+</header>
+
+<main class="main-dashboard">
+	<h3>Hola Dashboard</h3>
+</main>
+
+
+<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBVMPp_vQltWD0Z1ioe3TkwfPD2RbaQeg8",
+    authDomain: "doggybox-1e71a.firebaseapp.com",
+    databaseURL: "https://doggybox-1e71a.firebaseio.com",
+    storageBucket: "doggybox-1e71a.appspot.com",
+    messagingSenderId: "353151152094"
+  };
+  firebase.initializeApp(config);
+</script>
+
+{{ partial "footer_js" . }}

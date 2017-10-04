@@ -1,0 +1,91 @@
+baseurl = "https://doggybox-1e71a.firebaseapp.com/"
+languageCode = "it-it"
+title = "DoggyBox srl"
+theme = "hugo-material-docs"
+metadataformat = "yaml"
+canonifyurls = true
+# Enable Google Analytics by entering your tracking id
+googleAnalytics = ""
+# Ignore .Sass Files
+ignoreFiles = [ "\\.sass" ]
+
+[params]
+	# General information
+	author = "DoggyBox srl"
+	description = "DoggieBox è un abbonamento mensile di giocattoli e snacks per i nostri amici a quattro zampe. A partire da €29.99"
+	copyright = "© DoggyBox s.r.l. All Right Reserve"
+
+	# Repository
+	provider = ""
+	repo_url = ""
+
+	version = "1.0.0"
+	logo = "images/doggyBox_logo.svg"
+	logo_mobile = "images/doggyBox_logo.png"
+	favicon = "images/favicon.ico"
+
+	permalink = "#"
+
+	# Custom assets
+	custom_css = ["stylesheets/main.css"]
+	custom_js  = []
+
+	# Syntax highlighting theme
+	highlight_css  = "stylesheets/highlight.css"
+
+	[params.palette]
+    	primary = "blue"
+    	accent  = "white"
+
+    [params.font]
+    	text = "Lato"
+    	code = "Ubuntu Mono"
+
+
+[social]
+	twitter = ""
+	github  = "digitalcraftsman"
+	email   = "hello@email.com"
+
+
+[[menu.main]]
+	name   = "Home"
+	url    = "/#home"
+	weight = 0
+
+[[menu.main]]
+	name   = "Che c’e dentro"
+	url    = "/#checedentro"
+	weight = 10
+
+[[menu.main]]
+	name   = "Come abbonarsi"
+	url    = "/#comeabbonarsi"
+	weight = 20
+
+[[menu.main]]
+	name   = "Parla con un especialista"
+	url    = "/#chatespecialista"
+	weight = 30
+
+[[menu.main]]
+	name   = "Photo Gallery"
+	url    = "/#gallery"
+	weight = 40
+
+[[menu.main]]
+	name   = "#DOGGYBOX"
+	url    = "/#doggybox"
+	weight = 50
+
+[[menu.main]]
+	name   = "Newsletter"
+	url    = "/#newsletter"
+	weight = 60
+
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true

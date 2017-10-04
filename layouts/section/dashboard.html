@@ -1,0 +1,47 @@
+{{ partial "head" . }}
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	{{ partial "header" . }}
+</header>
+
+<main class="main main_container_dashboard">
+	<div class="drawer">
+		{{ partial "drawer" . }}
+	</div>
+
+	<div id="firebaseui-auth-container" class="auth">
+
+	</div>
+
+  <div class="articles">
+    <article class="article">
+  		<div class="wrapper">
+  			<h2>Ciao, .Username !</h2>
+        <br>
+				<div class="menu_dashboard">
+					{{ range .Data.Pages }}
+						 {{ .Render "li" }}
+					{{ end }}
+				</div>
+  		</div>
+  	</article>
+
+    <article class="article-right">
+      {{ range .Data.Pages }}
+       {{ .Render "single" }}
+      {{ end }}
+    </article>
+  </div>
+
+</main>
+
+{{ partial "footer_js" . }}
+{{ partial "footer" . }}

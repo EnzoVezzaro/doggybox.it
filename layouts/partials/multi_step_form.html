@@ -1,0 +1,174 @@
+<!-- multistep form -->
+
+<form id="msform" action="/form_saas" method="POST">
+  <!-- progressbar -->
+  <ul id="progressbar">
+    <li class="active">Peso</li>
+    <li>Sesso</li>
+    <li>Info</li>
+    <li>Piano</li>
+    <li>Payment</li>
+    <li class="form_dog_payment_display_none">Payment</li>
+  </ul>
+  <!-- fieldsets -->
+  <fieldset id="peso_container">
+    <h2 class="fs-title">Peso</h2>
+    <h3 class="fs-subtitle">Qual'e il peso del tuo animaletto?</h3>
+    <div class="peso_options">
+      <input type="radio" name="peso" value="small" id="small" checked="checked"/>
+      <input type="radio" name="peso" value="medium" id="medium" />
+      <input type="radio" name="peso" value="large" id="large" />
+      <div class="labels">
+        <label for="small"><span class="radio" >Small</span></label>
+        <label for="medium"><span class="radio" >Medium</span></label>
+        <label for="large"><span class="radio" >Large</span></label>
+      </div>
+    </div>
+    <input type="button" name="next" class="next action-button button is-outlined" value="Next" />
+  </fieldset>
+  <fieldset id="form_dog_gender">
+    <h2 class="fs-title">Genere</h2>
+    <h3 class="fs-subtitle">Quall'e il sesso del tuo cane?</h3>
+    <div class="gender_options">
+      <input type="radio" name="gender" value="male" id="male" checked="checked"/>
+      <input type="radio" name="gender" value="female" id="female" />
+      <div class="labels">
+        <label for="small"><span class="radio" >Maschio</span></label>
+        <label for="medium"><span class="radio" >Femina</span></label>
+      </div>
+    </div>
+    <input type="button" name="previous" class="previous action-button button is-outlined" value="Previous" />
+    <input type="button" name="next" class="next action-button button is-outlined" value="Next" />
+  </fieldset>
+  <fieldset id="form_dog_info">
+    <h2 class="fs-title">Parlacci di Lui</h2>
+    <h3 class="fs-subtitle">Presentacci il tuo cagnetto</h3>
+    <div class="upload">
+      <input type="hidden" class="tapatar" name="twitter" placeholder="Twitter" />
+    </div>
+    <input type="text" name="dog_name" placeholder="Nome del tuo amichetto" />
+    <input type="text" name="dog_age" placeholder="Dicci la sua eta" />
+    <textarea type="text" name="dog_description" placeholder="Parlacci di Lui" /></textarea>
+    <input type="button" name="previous" class="previous action-button button is-outlined" value="Previous" />
+    <input type="button" name="next" class="next action-button button is-outlined" value="Next" />
+  </fieldset>
+  <fieldset id="form_dog_plan">
+    <h2 class="fs-title">Scegli il tuo Piano</h2>
+    <h3 class="fs-subtitle">Scegli tra il "Wow! Plan" o il "Super Uper Non Posso Credere il mio cane ha piu gioccatoli di me! Plan"</h3>
+    <div class="piano_options">
+      <input type="radio" name="plan_options" value="Wow! Plan" id="plan_1" checked="checked" />
+      <input type="radio" name="plan_options" value="Super Uper Non Posso Credere il mio cane ha piu gioccatoli di me! Plan" id="plan_2" />
+      <div class="labels">
+        <label for="small"><span class="radio" >Wow! Plan</span></label>
+        <label for="medium"><span class="radio" >Super Uper Non Posso Credere il mio cane ha piu gioccatoli di me! Plan</span></label>
+      </div>
+    </div>
+    <input type="button" name="previous" class="previous action-button button is-outlined" value="Previous" />
+    <input type="button" name="next" class="next action-button button is-outlined" value="Next" />
+  </fieldset>
+  <fieldset id="form_dog_payment">
+    <h2 class="fs-title">Per Quanto Tempo?</h2>
+    <h3 class="fs-subtitle">Scegli per quanto vorresti mantenere il tuo piano</h3>
+    <div class="piano_time_options">
+      <form action="/form_1_month" method="POST" class="month">
+        <script
+          src="https://checkout.stripe.com/checkout.js"
+          class="stripe-button"
+          data-key="pk_test_Gwv3ccbeaVdcU6bM6iZ5Jl1b"
+          data-amount="3090"
+          data-name="1 DoggyBox"
+          data-description="1-3 Toys, 1-3 Treats, 1 Surprise"
+          data-image="{{ .SiteBaseURL }}/images/logo_paw_original.svg"
+          data-email="true"
+          data-zip-code="true"
+          data-billing-address="true"
+          data-label="1 Mese"
+          data-allow-remember-me="true"
+          data-locale="auto">
+        </script>
+      </form> <!--
+      <form action="/form_6_months" method="POST" class="6-months">
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_Gwv3ccbeaVdcU6bM6iZ5Jl1b"
+          data-amount="3090"
+          data-name="6 Mesi DoggyBox"
+          data-description="2-4 Toys, 2-4 Treats, 1 Surprise"
+          data-image="{{ .Site.BaseURL }}images/logo_paw_original.svg"
+          data-email="true"
+          data-zip-code="true"
+          data-billing-address="true"
+          data-label="6 Mesi"
+          data-allow-remember-me="true"
+          data-locale="auto">
+        </script>
+      </form>
+      <form action="/form_12_months" method="POST" class="12-months">
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_Gwv3ccbeaVdcU6bM6iZ5Jl1b"
+          data-amount="3090"
+          data-name="12 Mesi DoggyBox"
+          data-description="1-3 Toys, 1-3 Treats, 1 Surprise"
+          data-image="{{ .Site.BaseURL }}images/logo_paw_original.svg"
+          data-email="true"
+          data-zip-code="true"
+          data-billing-address="true"
+          data-label="12 Mesi"
+          data-allow-remember-me="true"
+          data-locale="auto">
+        </script>
+      </form> -->
+      <!-- <input type="radio" name="plans" value="1-month" id="customButton" class="plan_input" checked="checked" /> -->
+      <!-- <input type="radio" name="plans" value="6-months" id="plan_2_time" class="plan_input" />
+      <input type="radio" name="plans" value="12-months" id="plan_3_time" class="plan_input" />
+      <div class="labels"> -->
+        <!-- <label for="small"><span class="radio" >1 Mese</span></label> -->
+        <!-- <label for="medium"><span class="radio" >6 Mesi</span></label>
+        <label for="medium"><span class="radio" >12 Mesi</span></label>
+      </div> -->
+      <!-- <script>
+
+        document.getElementById('customButton').addEventListener('click', function(e) {
+        // Open Checkout with further options:
+
+        handler.open({
+          name: '1 DoggyBox',
+          description: '1 Mese',
+          amount: 3099
+        });
+
+        });
+
+        document.getElementById('plan_2_time').addEventListener('click', function(e) {
+
+        // Open Checkout with further options:
+        handler.open({
+          name: '6 DoggyBox',
+          description: '6 Mesi',
+          amount: 3099
+        });
+
+        });
+
+        document.getElementById('plan_3_time').addEventListener('click', function(e) {
+
+        // Open Checkout with further options:
+        handler.open({
+          name: '12 DoggyBox',
+          description: '12 Mesi',
+          amount: 2599
+        });
+
+        });
+
+        // Close Checkout on page navigation:
+        window.addEventListener('popstate', function() {
+        handler.close();
+        });
+      </script>
+    </div>
+    <input type="button" name="previous" class="previous action-button button is-outlined" value="Previous" />
+    <input type="submit" name="submit" class="submit action-button button is-outlined" value="Submit" /> -->
+  </fieldset>
+</form>

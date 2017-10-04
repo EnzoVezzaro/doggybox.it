@@ -1,0 +1,93 @@
+{{ partial "head" . }}
+
+{{ if (eq (trim .Site.Params.provider " " | lower) "github") | and (isset .Site.Params "repo_url") }}
+	{{ $repo_id := replace .Site.Params.repo_url "https://github.com/" ""}}
+	{{ .Scratch.Set "repo_id" $repo_id }}
+{{ end }}
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	{{ partial "header" . }}
+</header>
+
+<main class="main">
+
+	<div id="firebaseui-auth-container" class="auth">
+
+	</div>
+
+	<div class="drawer">
+		{{ partial "drawer" . }}
+	</div>
+	<a id="home" href="#"></a>
+	<div class="introduction">
+		{{ partial "intro.html" . }}
+	</div>
+
+	<a id="checedentro" href="#"></a>
+	<div class="dog_bone_love">
+		{{ partial "dog_bone_love.html" . }}
+	</div>
+
+	<a id="comeabbonarsi" href="#"></a>
+	<div class="piano">
+		{{ partial "piano.html" . }}
+	</div>
+
+	<a id="chatespecialista" href="#"></a>
+	<div class="chat">
+		{{ partial "chat.html" . }}
+	</div>
+
+	<a id="gallery" href="#"></a>
+	<div class="multimedia">
+		{{ partial "multimedia.html" . }}
+	</div>
+
+	<a id="doggybox" href="#"></a>
+	<div class="social_media">
+		{{ partial "social_media.html" . }}
+	</div>
+
+	<a id="newsletter" href="#"></a>
+	{{ partial "footer.html" . }}
+
+	<!-- Original Code
+	<article class="article">
+		<div class="wrapper">
+			{{ range where .Site.Pages "Type" "index" }}
+				<h1>{{ .Title }} {{ if .IsDraft }} (Draft){{ end }}</h1>
+
+				{{ .Content }}
+			{{ end }}
+
+			<aside class="copyright" role="note">
+				{{ with .Site.Params.copyright }}
+				&copy; {{ $.Now.Format "2006" }} {{ . }} &ndash;
+				{{ end }}
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				{{ partial "footer" . }}
+			</footer>
+		</div>
+	</article> -->
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+{{ partial "footer_js" . }}

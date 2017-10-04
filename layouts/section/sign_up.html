@@ -1,0 +1,30 @@
+{{ partial "head" . }}
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	{{ partial "header" . }}
+</header>
+
+<div id="firebaseui-auth-container" class="auth">
+</div>
+
+<main class="main main_container_sign_up">
+	<div class="drawer">
+		{{ partial "drawer" . }}
+	</div>
+
+  <div class="multi_step_form_container">
+    {{ partial "multi_step_form" . }}
+  </div>
+
+</main>
+
+{{ partial "footer_js" . }}
+{{ partial "footer" . }}
